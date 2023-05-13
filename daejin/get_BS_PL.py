@@ -29,3 +29,5 @@ for i in range(10):
 PL = get_PL()
 for i in range(10):
 	print(PL[i])
+
+#살펴본 결과 모든 value가 str타입이네요.. 종목코드나 업종, 전기, 전전기 등은 숫자 자료형으로 바꿔주는 게 나을 것 같네욥
