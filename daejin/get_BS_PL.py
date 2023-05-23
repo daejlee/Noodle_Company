@@ -72,18 +72,32 @@ def merge_BS_PL(BS, PL):
 					# for k in range(len((p_val)[i])):
 	return ret
 
-#재무상태표와 손익계산서 데이터를 가져왔습니다. 저장 형식은 딕셔너리 리스트입니다.
-BS = get_BS()
-PL = get_PL()
-
-#BS와 PL을 합쳤습니다. BS만 있는 기업은 일단 BS만 넣어놨습니다.
-MERGED_REPORT = merge_BS_PL(BS, PL)
-
-#ex) 당기 구하는 함수입니다. get_dangi("경방", "매출액") 이렇게 쓰시면 됩니다. 따옴표 필수!
+#ex) 당기 구하는 함수입니다.
 def	get_dangi(company_name, search_value):
+	if search_value == "당기순이익":
+		for item in MERGED_REPORT[company_name]:
+			name = item['항목명'].replace(' ', '')
+			NET_VAL_LST = [
+			'당기의순',
+			'당기순',
+			"당분기순",
+			"당기이익",
+			"당기연결",
+			"#NAME?"]
+			for elem in NET_VAL_LST:
+				if elem in name and (item["당기"] != "" and item["당기"] != 0):
+					return item["당기"]
+	if search_value == "자본총계":
+		for item in MERGED_REPORT[company_name]:
+			name = item['항목명'].replace(' ', '')
+			if "기말" in name or "기말" in name:
+				return item["당기"]
 	for item in MERGED_REPORT[company_name]:
-		if search_value in item['항목명']:
+		name = item['항목명'].replace(' ', '')
+		if search_value in name:
 			return item["당기"]
 
-#사용예시
-print(get_dangi("경방", "유동자산"))
+BS = get_BS()
+PL = get_PL()
+#2022BS,PL이 포함된 자료입니다. 이중 딕셔너리입니다. {회사명(key) : 사업보고서(val이면서 딕셔너리 자체)}
+MERGED_REPORT = merge_BS_PL(BS, PL)
