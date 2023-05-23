@@ -67,7 +67,9 @@ def merge_BS_PL(BS, PL):
 		ret[b_key] = b_val
 		for p_key, p_val in PL.items():
 			if b_key == p_key:
-				ret[b_key] = p_val
+				for i in range(len(p_val)):
+					ret[b_key].append(p_val[i])
+					# for k in range(len((p_val)[i])):
 	return ret
 
 #재무상태표와 손익계산서 데이터를 가져왔습니다. 저장 형식은 딕셔너리 리스트입니다.
@@ -80,8 +82,8 @@ MERGED_REPORT = merge_BS_PL(BS, PL)
 #ex) 당기 구하는 함수입니다. get_dangi("경방", "매출액") 이렇게 쓰시면 됩니다. 따옴표 필수!
 def	get_dangi(company_name, search_value):
 	for item in MERGED_REPORT[company_name]:
-		if item['항목명'] == search_value:
+		if search_value in item['항목명']:
 			return item["당기"]
 
 #사용예시
-print(get_dangi("경방", "매출액"))
+print(get_dangi("경방", "유동자산"))
