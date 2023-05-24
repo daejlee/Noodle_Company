@@ -13,7 +13,7 @@ for key in MERGED_REPORT:
 	if CAP == NOT_EXISTING:
 		continue
 	#쉼표를 없애고 실수형으로 저장했습니다.
-	CAP = float(CAP.replace(',', ''))
+	CAP = float(CAP.replace(',', '')) * 100000000
 	try:
 		ncav = get_dangi(company, "유동자산") - get_dangi(company, "부채총계")
 		#당기순이익입니다.
