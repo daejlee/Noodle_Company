@@ -1,112 +1,46 @@
 #1. 시가총액 >= 500000000000 or 매출액 >= 1000000000000
-#2. 시가총액/당기순이익 <= 13 or 시가총액/당기순이익 * 시가종액/자본총계 <= 20
+#2. 시가총액/당기순이익 <= 13 or 시가총액/당기순이익 * 시가총액/자본총계 <= 20
 #3. 유동자산/유동부채 >= 1.5
 #4. 당기순이익/자본총계 >= 0.15
-#5. EPS 7년 성장률 >= 1.11
-
-BS = get_BS()
-ticker_list = []  # 조건을 만족하는 기업 저장할 리스트
-
-for data in BS:
-    # 조건 1: 시가총액 >= 500000000000 or 매출액 >= 1000000000000
-    if data['시가총액'] >= 500000000000 or data['매출액'] >= 1000000000000:
-
-        # 조건 2: 시가총액/당기순이익 <= 13 or 시가총액/당기순이익 * 시가종액/자본총계 <= 20
-        if (data['시가총액'] / data['당기순이익'] <= 13) or (data['시가총액'] / data['당기순이익'] * data['시가종가'] / data['자본총계'] <= 20):
-
-            # 조건 3: 유동자산/유동부채 >= 1.5
-            if data['유동자산'] / data['유동부채'] >= 1.5:
-
-                # 조건 4: 당기순이익/자본총계 >= 0.15
-                if data['당기순이익'] / data['자본총계'] >= 0.15:
-
-                    # 조건 5: EPS 7년 성장률 >= 1.11
-                    if data['EPS 7년 성장률'] >= 1.11:
-                        ticker_list.append(data['티커'])
-
-print(ticker_list)  # 조건을 만족하는 기업 출력
 
 
-"""from db import MERGED_REPORT
-def	get_dangi(company_name, search_value):
-	for item in MERGED_REPORT[company_name]:
-		if item['항목명'] == search_value:
-			return item["당기"]
-def filter_condition_1(company_name):
-    market_cap = get_dangi(company_name, '시가총액')
-    revenue = get_dangi(company_name, '매출액')
-    if market_cap >= 500000000000 or revenue >= 1000000000000:
-        return True
-    return False
+from get_BS_PL import *
+from get_sync_data import *
 
-# 2. 시가총액/당기순이익 <= 13 or 시가총액/당기순이익 * 시가종액/자본총계 <= 20
-def filter_condition_2(company_name):
-    market_cap = get_dangi(company_name, '시가총액')
-    net_profit = get_dangi(company_name, '당기순이익')
-    total_assets = get_dangi(company_name, '자본총계')
-    if market_cap / net_profit <= 13 or market_cap / net_profit * market_cap / total_assets <= 20:
-        return True
-    return False
+# 다른 회사들과 재무제표 패턴이 다른 극소수 회사들을 저장해놓을 리스트
+OUTLAW_LIST = []
 
-# 3. 유동자산/유동부채 >= 1.5
-def filter_condition_3(company_name):
-    current_assets = get_dangi(company_name, '유동자산')
-    current_liabilities = get_dangi(company_name, '유동부채')
-    if current_assets / current_liabilities >= 1.5:
-        return True
-    return False
+secarg_corp = []
+for key in MERGED_REPORT:
+    company = key
+    # 시가총액을 가져오기.
+    CAP = get_market_cap(company)
+    # 네이버 증권에 존재하지 않는 기업은 건너뛰기.
+    if CAP == NOT_EXISTING or CAP is None:
+        continue
+    # 시가총액을 쉼표를 없애고 실수형으로 변환합니다.
+    CAP = float(CAP.replace(',', '')) * 100000000
+    try:
+        # 당기순이익을 가져옵니다.
+        NET_INCOME = get_dangi(company, "당기순이익")
+        # 계산하기 전에 값이 None이 아닌지 확인합니다.
+        if NET_INCOME is not None:
+            # 시가총액 대비 당기순이익의 비율인 P/E 비율을 계산합니다.
+            per = CAP / NET_INCOME
+        else:
+            # 값이 없는 기업은 OUTLAW_LIST에 추가합니다.
+            OUTLAW_LIST.append(company)
+            continue
+    except:
+        # 오류가 발생한 기업은 OUTLAW_LIST에 추가합니다.
+        OUTLAW_LIST.append(company)
+        continue
+    # 조건을 확인합니다.
+    if CAP >= 500000000000 or (get_dangi(company, "매출액") is not None and get_dangi(company, "매출액") >= 1000000000000):
+        if per <= 13 or per * (CAP / get_dangi(company, "자본총계")) <= 20:
+            if get_dangi(company, "유동자산") / get_dangi(company, "유동부채") >= 1.5:
+                if NET_INCOME / get_dangi(company, "자본총계") >= 0.15:
+                    # 조건에 부합하는 기업을 secarg_corp 리스트에 추가합니다.
+                    secarg_corp.append(company)
 
-# 4. 당기순이익/자본총계 >= 0.15
-def filter_condition_4(company_name):
-    net_profit = get_dangi(company_name, '당기순이익')
-    total_equity = get_dangi(company_name, '자본총계')
-    if net_profit / total_equity >= 0.15:
-        return True
-    return False
-
-# 조건에 맞는 기업 찾기
-def find_companies():
-    filtered_companies = []
-    for company_name in MERGED_REPORT.keys():
-        if (
-            filter_condition_1(company_name) and
-            filter_condition_2(company_name) and
-            filter_condition_3(company_name) and
-            filter_condition_4(company_name)
-        ):
-            filtered_companies.append(company_name)
-    return filtered_companies
-
-# 조건에 맞는 기업 찾기
-filtered_companies = find_companies()
-
-# 결과 출력
-for company_name in filtered_companies:
-    print(company_name)"""
-
-
-"""def filter_companies(report):
-    filtered_companies = {}
-    for company, data in report.items():
-        # 조건 1: 시가총액 >= 500000000000 or 매출액 >= 1000000000000
-        if data[0]['시가총액'] >= 500000000000 or data[0]['매출액'] >= 1000000000000:
-            # 조건 2: 시가총액/당기순이익 <= 13 or 시가총액/당기순이익 * 시가종액/자본총계 <= 20
-            if (data[0]['시가총액'] / data[0]['당기순이익'] <= 13) or (
-                    data[0]['시가총액'] / data[0]['당기순이익'] * data[0]['시가종액'] / data[0]['자본총계'] <= 20):
-                # 조건 3: 유동자산/유동부채 >= 1.5
-                if data[0]['유동자산'] / data[0]['유동부채'] >= 1.5:
-                    # 조건 4: 당기순이익/자본총계 >= 0.15
-                    if data[0]['당기순이익'] / data[0]['자본총계'] >= 0.15:
-                        filtered_companies[company] = data
-
-    return filtered_companies
-
-
-# MERGED_REPORT에서 필터링을 수행하여 조건에 맞는 기업들을 얻습니다.
-filtered_companies = filter_companies(MERGED_REPORT)
-
-# 결과 출력
-for company, data in filtered_companies.items():
-    print("회사명:", company)
-    print("데이터:", data)
-    print("---")"""
+print(secarg_corp)
