@@ -44,3 +44,4 @@ for key in MERGED_REPORT:
                     secarg_corp.append(company)
 
 print(secarg_corp)
+#푸쉬했습니다.
