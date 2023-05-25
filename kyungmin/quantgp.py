@@ -227,3 +227,5 @@ print("Stochastic:")
 print(df_stochastic)
 draw_chart(df_stochastic, left=['slow_k', 'slow_d'])
 plt.show()
+
+#수장
