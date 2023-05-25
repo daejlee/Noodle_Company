@@ -1,5 +1,7 @@
 import csv
 
+FILE_PATH = 'C:/Users/savif/workspace/Noodle_Company/cache/2022'
+
 #필요없는 키들을 삭제했고, 종목코드의 []를 제거하였고, 단위를 통일하기 위해 당기, 전기, 전전기의 ,를 제거하였습니다.
 def cleanse_data(row):
 	del(row['\ufeff재무제표종류'])
@@ -23,7 +25,7 @@ def cleanse_data(row):
 
 def get_BS():
 	#파일명은 본인 컴퓨터 환경 따라 다를 수 있습니다. 일단 제 컴퓨터 환경에서의 파일명을 걸어놨어요.
-	file_name = "C:/Users/savif/OneDrive/바탕 화면/Noodle_Company/daejin/cache/2022/2022_BS.csv"
+	file_name = FILE_PATH + "/2022_BS.csv"
 	f = open(file_name, 'rt', encoding='UTF8')
 	reader = csv.DictReader(f)
 	cleansed_data = []
@@ -43,7 +45,7 @@ def get_BS():
 
 def get_PL():
 	#파일명은 본인 컴퓨터 환경 따라 다를 수 있습니다. 일단 제 컴퓨터 환경에서의 파일명을 걸어놨어요.
-	file_name = "C:/Users/savif/OneDrive/바탕 화면/Noodle_Company/daejin/cache/2022/2022_PL.csv"
+	file_name = FILE_PATH + "/2022_PL.csv"
 	f = open(file_name, 'rt', encoding='UTF8')
 	reader = csv.DictReader(f)
 	cleansed_data = []
