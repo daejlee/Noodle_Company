@@ -12,7 +12,6 @@ def cleanse_data(row):
 	del(row['결산기준일'])
 	del(row['보고서종류'])
 	del(row['통화'])
-	del(row['항목코드'])
 	row['종목코드'] = row['종목코드'].replace('[', '').replace(']', '')
 	row['당기'] = row['당기'].replace(',', '')
 	row['전기'] = row['전기'].replace(',', '')
@@ -43,6 +42,26 @@ def get_BS():
 	f.close()
 	return BS_2022
 
+def get_PL_C():
+	#파일명은 본인 컴퓨터 환경 따라 다를 수 있습니다. 일단 제 컴퓨터 환경에서의 파일명을 걸어놨어요.
+	file_name = FILE_PATH + "/2022_PL_C.csv"
+	f = open(file_name, 'rt', encoding='UTF8')
+	reader = csv.DictReader(f)
+	cleansed_data = []
+	for row in reader:
+		cleansed_data.append(cleanse_data(row))
+	PL_C_2022 = {}
+	prev_row = cleansed_data[0]
+	lst = []
+	for row in cleansed_data:
+		if prev_row['회사명'] != row['회사명']:
+			PL_C_2022[prev_row['회사명']] = lst
+			lst = []
+		prev_row = row
+		lst.append(row)
+	f.close()
+	return PL_C_2022
+
 def get_PL():
 	#파일명은 본인 컴퓨터 환경 따라 다를 수 있습니다. 일단 제 컴퓨터 환경에서의 파일명을 걸어놨어요.
 	file_name = FILE_PATH + "/2022_PL.csv"
@@ -63,7 +82,7 @@ def get_PL():
 	f.close()
 	return PL_2022
 
-def merge_BS_PL(BS, PL):
+def merge_BS_PL(BS, PL, PL_C):
 	ret = {}
 	for b_key, b_val in BS.items():
 		ret[b_key] = b_val
@@ -71,7 +90,10 @@ def merge_BS_PL(BS, PL):
 			if b_key == p_key:
 				for i in range(len(p_val)):
 					ret[b_key].append(p_val[i])
-					# for k in range(len((p_val)[i])):
+					for pc_key, pc_val in PL_C.items():
+						if p_key == pc_key:
+							for k in range(len(pc_val)):
+								ret[b_key].append(pc_val[k])
 	return ret
 
 #ex) 당기 구하는 함수입니다.
@@ -101,5 +123,6 @@ def	get_dangi(company_name, search_value):
 
 BS = get_BS()
 PL = get_PL()
+PL_C = get_PL_C()
 #2022BS,PL이 포함된 자료입니다. 이중 딕셔너리입니다. {회사명(key) : 사업보고서(val이면서 딕셔너리 자체)}
-MERGED_REPORT = merge_BS_PL(BS, PL)
+MERGED_REPORT = merge_BS_PL(BS, PL, PL_C)

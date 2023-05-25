@@ -7,6 +7,7 @@ OUTLAW_LIST = []
 secarg_corp = []
 for key in MERGED_REPORT:
 	company = key
+	CUR_CMP = MERGED_REPORT[company]
 	#시가총액입니다.
 	CAP = get_market_cap(company)
 	#시가총액이 네이버 증권에 존재하지 않는 기업은 패스했습니다.
@@ -20,7 +21,7 @@ for key in MERGED_REPORT:
 		NET_INCOME = get_dangi(company, "당기순이익")
 		per = CAP / NET_INCOME
 	except:
-		#위 과정에서 오류가 발생하는 기업들은 따로 모아놨습니다.
+	#위 과정에서 오류가 발생하는 기업들은 따로 모아놨습니다.
 		OUTLAW_LIST.append(company)
 		continue
 	if ncav / CAP >= 1.5:
