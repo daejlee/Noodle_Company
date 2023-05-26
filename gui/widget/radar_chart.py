@@ -1,133 +1,102 @@
-import matplotlib.pyplot as plt
+import sys
 import pandas as pd
-import numpy as np
- 
+from PyQt5.QtWidgets import *
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from math import pi
-from matplotlib.path import Path
-from matplotlib.spines import Spine
-from matplotlib.transforms import Affine2D
- 
+
+
 ## 데이터 준비
 df = pd.DataFrame({
-'Character': ['Barbarian','Amazon','Necromancer','Sorceress','Paladin'],
-'Strength': [10, 5, 3, 2, 7],
-'Dexterity': [4, 10, 3, 3, 8],
-'Vitality': [9, 9, 7, 7, 8],
-'Energy': [4, 4, 10, 10, 6],
-'Wisdom': [2, 6, 8, 9, 8]
+'company': ['c1', 'c2', 'c3', 'c4', 'c5'],
+'score1': [10, 5, 3, 2, 7],
+'score2': [4, 10, 3, 3, 8],
+'score3': [9, 9, 7, 7, 8],
+'score4': [4, 4, 10, 10, 6],
+'score5': [2, 6, 8, 9, 8]
 })
 
-## 따로 그리기
-labels = df.columns[1:]
-num_labels = len(labels)
-    
-angles = [x/float(num_labels)*(2*pi) for x in range(num_labels)] ## 각 등분점
-angles += angles[:1] ## 시작점으로 다시 돌아와야하므로 시작점 추가
-    
-my_palette = plt.cm.get_cmap("Set2", len(df.index))
- 
-fig = plt.figure(figsize=(15,20))
-fig.set_facecolor('white')
- 
-for i, row in df.iterrows():
-    color = my_palette(i)
-    data = df.iloc[i].drop('Character').tolist()
-    data += data[:1]
-    
-    ax = plt.subplot(3,2,i+1, polar=True)
-    ax.set_theta_offset(pi / 2) ## 시작점
-    ax.set_theta_direction(-1) ## 그려지는 방향 시계방향
-    
-    plt.xticks(angles[:-1], labels, fontsize=13) ## x축 눈금 라벨
-    ax.tick_params(axis='x', which='major', pad=15) ## x축과 눈금 사이에 여백을 준다.
- 
-    ax.set_rlabel_position(0) ## y축 각도 설정(degree 단위)
-    plt.yticks([0,2,4,6,8,10],['0','2','4','6','8','10'], fontsize=10) ## y축 눈금 설정
-    plt.ylim(0,10)
-    
-    ax.plot(angles, data, color=color, linewidth=2, linestyle='solid') ## 레이더 차트 출력
-    ax.fill(angles, data, color=color, alpha=0.4) ## 도형 안쪽에 색을 채워준다.
-    
-    plt.title(row.Character, size=20, color=color,x=-0.2, y=1.2, ha='left') ## 타이틀은 캐릭터 클래스로 한다.
- 
-plt.tight_layout(pad=5) ## subplot간 패딩 조절
-plt.show()
 
-## 하나로 합치기
-labels = df.columns[1:]
-num_labels = len(labels)
-    
-angles = [x/float(num_labels)*(2*pi) for x in range(num_labels)] ## 각 등분점
-angles += angles[:1] ## 시작점으로 다시 돌아와야하므로 시작점 추가
-    
-my_palette = plt.cm.get_cmap("Set2", len(df.index))
- 
-fig = plt.figure(figsize=(8,8))
-fig.set_facecolor('white')
-ax = fig.add_subplot(polar=True)
-for i, row in df.iterrows():
-    color = my_palette(i)
-    data = df.iloc[i].drop('Character').tolist()
-    data += data[:1]
-    
-    ax.set_theta_offset(pi / 2) ## 시작점
-    ax.set_theta_direction(-1) ## 그려지는 방향 시계방향
-    
-    plt.xticks(angles[:-1], labels, fontsize=13) ## 각도 축 눈금 라벨
-    ax.tick_params(axis='x', which='major', pad=15) ## 각 축과 눈금 사이에 여백을 준다.
- 
-    ax.set_rlabel_position(0) ## 반지름 축 눈금 라벨 각도 설정(degree 단위)
-    plt.yticks([0,2,4,6,8,10],['0','2','4','6','8','10'], fontsize=10) ## 반지름 축 눈금 설정
-    plt.ylim(0,10)
-    
-    ax.plot(angles, data, color=color, linewidth=2, linestyle='solid', label=row.Character) ## 레이더 차트 출력
-    ax.fill(angles, data, color=color, alpha=0.4) ## 도형 안쪽에 색을 채워준다.
-    
-plt.legend(loc=(0.9,0.9))
-plt.show()
+class MyWindow(QWidget):
+	def __init__(self):
+		super().__init__()
+		self.initUI()
+		self.setLayout(self.layout)
+		self.setGeometry(200, 200, 800, 600)
+
+	def initUI(self):
+		self.fig = plt.figure(figsize=(8, 8))
+		self.fig.set_facecolor('white')
+
+		self.canvas = FigureCanvas(self.fig)
+
+		layout = QVBoxLayout()
+		layout.addWidget(self.canvas)
+
+		cb = QComboBox()
+		cb.addItem('Graph1')
+		cb.addItem('Graph2')
+		cb.activated[str].connect(self.onComboBoxChanged)
+		layout.addWidget(cb)
+
+		self.layout = layout
+		self.onComboBoxChanged(cb.currentText())
+
+	def onComboBoxChanged(self, text):
+		if text == 'Graph1':
+			self.doGraph1()
+		elif text == 'Graph2':
+			self.doGraph2()
+
+	def doGraph1(self):
+		## 하나의 회사 선택
+		target_company = 'c1'
+		labels = df.columns[1:]
+		data = df.loc[df['company'] == target_company, labels].values.flatten().tolist()
+		data.append(data[0])  # 시작점의 값 추가
+
+		## 레이더 차트 그리기
+		num_labels = len(labels)
+		angles = [x / float(num_labels) * (2 * pi) for x in range(num_labels)]
+		angles += angles[:1]
+
+		ax = self.fig.add_subplot(111, polar=True)  # 서브플롯 추가 (111: 1x1 그리드의 첫 번째)
+
+		ax.set_theta_offset(pi / 2)
+		ax.set_theta_direction(-1)
+
+		plt.xticks(angles[:-1], labels, fontsize=13)
+		ax.tick_params(axis='x', which='major', pad=15)
+
+		ax.set_rlabel_position(0)
+		plt.yticks([0, 2, 4, 6, 8, 10], ['0', '2', '4', '6', '8', '10'], fontsize=10)
+		plt.ylim(0, 10)
+
+		# 레이더 차트 그리기
+		ax.plot(angles, data, color='blue', linewidth=2, linestyle='solid')
+		ax.fill(angles, data, color='blue', alpha=0.4)
+
+		# 각 스코어 값 표시
+		for i, (angle, score) in enumerate(zip(angles, data[:-1])):
+			angle_deg = angle * 180 / pi  # 각도를 degree로 변환
+			if angle_deg <= 90:
+				ha = 'left'
+				va = 'bottom'
+			else:
+				ha = 'right'
+				va = 'bottom'
+			ax.text(angle, score + 0.5, str(score), color='blue', ha=ha, va=va)
+
+		# 회사명 표시
+		x = 0  # x 좌표
+		y = 0.9  # y 좌표
+		self.fig.text(x, y, target_company, color='black', fontsize=24, ha='left', va='center')
+
+		self.canvas.draw()
 
 
-
-## 하나로 합치기 - 폴리곤
-labels = df.columns[1:]
-num_labels = len(labels)
-    
-angles = [x/float(num_labels)*(2*pi) for x in range(num_labels)] ## 각 등분점
-angles += angles[:1] ## 시작점으로 다시 돌아와야하므로 시작점 추가
-    
-my_palette = plt.cm.get_cmap("Set2", len(df.index))
- 
-fig = plt.figure(figsize=(8,8))
-fig.set_facecolor('white')
-ax = fig.add_subplot(polar=True)
-for i, row in df.iterrows():
-    color = my_palette(i)
-    data = df.iloc[i].drop('Character').tolist()
-    data += data[:1]
-    
-    ax.set_theta_offset(pi / 2) ## 시작점
-    ax.set_theta_direction(-1) ## 그려지는 방향 시계방향
-    
-    plt.xticks(angles[:-1], labels, fontsize=13) ## x축 눈금 라벨
-    ax.tick_params(axis='x', which='major', pad=15) ## x축과 눈금 사이에 여백을 준다.
-    ax.set_rlabel_position(0) ## y축 각도 설정(degree 단위)
-    plt.yticks([0,2,4,6,8,10],['0','2','4','6','8','10'], fontsize=10) ## y축 눈금 설정
-    plt.ylim(0,10)
-    
-    ax.plot(angles, data, color=color, linewidth=2, linestyle='solid', label=row.Character) ## 레이더 차트 출력
-    ax.fill(angles, data, color=color, alpha=0.4) ## 도형 안쪽에 색을 채워준다.
-    
-for g in ax.yaxis.get_gridlines(): ## grid line 
-    g.get_path()._interpolation_steps = len(labels)
- 
-spine = Spine(axes=ax,
-          spine_type='circle',
-          path=Path.unit_regular_polygon(len(labels)))
- 
-## Axes의 중심과 반지름을 맞춰준다.
-spine.set_transform(Affine2D().scale(.5).translate(.5, .5)+ax.transAxes)
-           
-ax.spines = {'polar':spine} ## frame의 모양을 원에서 폴리곤으로 바꿔줘야한다.
- 
-plt.legend(loc=(0.9,0.9))
-plt.show()
+if __name__ == "__main__":
+	app = QApplication(sys.argv)
+	window = MyWindow()
+	window.show()
+	app.exec_()
