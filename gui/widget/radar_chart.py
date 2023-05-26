@@ -2,101 +2,127 @@ import sys
 import pandas as pd
 from PyQt5.QtWidgets import *
 import matplotlib.pyplot as plt
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.backends.backend_qt5agg import FigureCanvas
 from math import pi
+from PyQt5 import uic
 
+from matplotlib.figure import Figure
 
 ## 데이터 준비
 df = pd.DataFrame({
-'company': ['c1', 'c2', 'c3', 'c4', 'c5'],
-'score1': [10, 5, 3, 2, 7],
-'score2': [4, 10, 3, 3, 8],
-'score3': [9, 9, 7, 7, 8],
-'score4': [4, 4, 10, 10, 6],
-'score5': [2, 6, 8, 9, 8]
+    'company': ['c1', 'c2', 'c3', 'c4', 'c5'],
+    'score1': [10, 5, 3, 2, 7],
+    'score2': [4, 10, 3, 3, 8],
+    'score3': [9, 9, 7, 7, 8],
+    'score4': [4, 4, 10, 10, 6],
+    'score5': [2, 6, 8, 9, 8]
 })
 
+class MyCanvas(FigureCanvas):
+    def __init__(self, parent=None, width=5, height=5, dpi=100):
+        fig = Figure(figsize=(width, height), dpi=dpi)
+        fig.set_facecolor('white')
+        self.axes = fig.add_subplot(111, polar=True)
 
-class MyWindow(QWidget):
-	def __init__(self):
-		super().__init__()
-		self.initUI()
-		self.setLayout(self.layout)
-		self.setGeometry(200, 200, 800, 600)
+        super().__init__(fig)
 
-	def initUI(self):
-		self.fig = plt.figure(figsize=(8, 8))
-		self.fig.set_facecolor('white')
+        self.setParent(parent)
 
-		self.canvas = FigureCanvas(self.fig)
+        FigureCanvas.setSizePolicy(self,
+                                   QSizePolicy.Expanding,
+                                   QSizePolicy.Expanding)
+        FigureCanvas.updateGeometry(self)
 
-		layout = QVBoxLayout()
-		layout.addWidget(self.canvas)
+    def plotGraph1(self):
+        ## 하나의 회사 선택
+        target_company = 'c1'
+        labels = df.columns[1:]
+        data = df.loc[df['company'] == target_company, labels].values.flatten().tolist()
+        data.append(data[0])  # 시작점의 값 추가
 
-		cb = QComboBox()
-		cb.addItem('Graph1')
-		cb.addItem('Graph2')
-		cb.activated[str].connect(self.onComboBoxChanged)
-		layout.addWidget(cb)
+        ## 레이더 차트 그리기
+        num_labels = len(labels)
+        angles = [x / float(num_labels) * (2 * pi) for x in range(num_labels)]
+        angles += angles[:1]
 
-		self.layout = layout
-		self.onComboBoxChanged(cb.currentText())
+        self.axes.clear()
 
-	def onComboBoxChanged(self, text):
-		if text == 'Graph1':
-			self.doGraph1()
-		elif text == 'Graph2':
-			self.doGraph2()
+        self.axes.set_theta_offset(pi / 2)
+        self.axes.set_theta_direction(-1)
 
-	def doGraph1(self):
-		## 하나의 회사 선택
-		target_company = 'c1'
-		labels = df.columns[1:]
-		data = df.loc[df['company'] == target_company, labels].values.flatten().tolist()
-		data.append(data[0])  # 시작점의 값 추가
+        self.axes.set_xticks(angles[:-1])
+        self.axes.set_xticklabels(labels, fontsize=13)
+        self.axes.tick_params(axis='x', which='major', pad=15)
 
-		## 레이더 차트 그리기
-		num_labels = len(labels)
-		angles = [x / float(num_labels) * (2 * pi) for x in range(num_labels)]
-		angles += angles[:1]
+        self.axes.set_rlabel_position(0)
+        self.axes.set_yticks([0, 2, 4, 6, 8, 10])
+        self.axes.set_yticklabels(['0', '2', '4', '6', '8', '10'], fontsize=10)
+        self.axes.set_ylim(0, 10)
 
-		ax = self.fig.add_subplot(111, polar=True)  # 서브플롯 추가 (111: 1x1 그리드의 첫 번째)
+        self.axes.plot(angles, data, color='blue', linewidth=2, linestyle='solid')
+        self.axes.fill(angles, data, color='blue', alpha=0.4)
 
-		ax.set_theta_offset(pi / 2)
-		ax.set_theta_direction(-1)
+        for i, (angle, score) in enumerate(zip(angles, data[:-1])):
+            angle_deg = angle * 180 / pi
+            if angle_deg <= 90:
+                ha = 'left'
+                va = 'bottom'
+            else:
+                ha = 'right'
+                va = 'bottom'
+            self.axes.text(angle, score + 0.5, str(score), color='blue', ha=ha, va=va)
 
-		plt.xticks(angles[:-1], labels, fontsize=13)
-		ax.tick_params(axis='x', which='major', pad=15)
+        self.draw()
 
-		ax.set_rlabel_position(0)
-		plt.yticks([0, 2, 4, 6, 8, 10], ['0', '2', '4', '6', '8', '10'], fontsize=10)
-		plt.ylim(0, 10)
+    def plotGraph2(self):
+        ## 여러 회사 선택
+        target_companies = ['c2', 'c3', 'c4', 'c5']
+        labels = df.columns[1:]
 
-		# 레이더 차트 그리기
-		ax.plot(angles, data, color='blue', linewidth=2, linestyle='solid')
-		ax.fill(angles, data, color='blue', alpha=0.4)
+        self.axes.clear()
 
-		# 각 스코어 값 표시
-		for i, (angle, score) in enumerate(zip(angles, data[:-1])):
-			angle_deg = angle * 180 / pi  # 각도를 degree로 변환
-			if angle_deg <= 90:
-				ha = 'left'
-				va = 'bottom'
-			else:
-				ha = 'right'
-				va = 'bottom'
-			ax.text(angle, score + 0.5, str(score), color='blue', ha=ha, va=va)
+        self.axes.set_theta_offset(pi / 2)
+        self.axes.set_theta_direction(-1)
 
-		# 회사명 표시
-		x = 0  # x 좌표
-		y = 0.9  # y 좌표
-		self.fig.text(x, y, target_company, color='black', fontsize=24, ha='left', va='center')
+        self.axes.set_xticks([])
+        self.axes.set_yticks([])
 
-		self.canvas.draw()
+        colors = ['orange', 'green', 'red', 'purple']
 
+        for i, company in enumerate(target_companies):
+            data = df.loc[df['company'] == company, labels].values.flatten().tolist()
+            data.append(data[0])  # 시작점의 값 추가
+
+            num_labels = len(labels)
+            angles = [x / float(num_labels) * (2 * pi) for x in range(num_labels)]
+            angles += angles[:1]
+
+            self.axes.plot(angles, data, color=colors[i], linewidth=1, linestyle='solid')
+            self.axes.fill(angles, data, color=colors[i], alpha=0.3)
+
+            for angle, score in zip(angles, data[:-1]):
+                angle_deg = angle * 180 / pi
+                if angle_deg <= 90:
+                    ha = 'left'
+                    va = 'bottom'
+                else:
+                    ha = 'right'
+                    va = 'bottom'
+                self.axes.text(angle, score + 0.5, str(score), color=colors[i], ha=ha, va=va)
+
+        self.draw()
+
+class MyWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi("c:/Users/user/Desktop/Noodle_Company/gui/widget/monitoring.ui", self)
+        self.canvas = FigureCanvasQTAgg(self.centralwidget)
+        self.canvas.setGeometry(100, 70, 541, 461)
+        self.pushButton.clicked.connect(self.canvas.plotGraph1)
+        self.pushButton_2.clicked.connect(self.canvas.plotGraph2)
 
 if __name__ == "__main__":
-	app = QApplication(sys.argv)
-	window = MyWindow()
-	window.show()
-	app.exec_()
+    app = QApplication(sys.argv)
+    window = MyWindow()
+    window.show()
+    app.exec_()
