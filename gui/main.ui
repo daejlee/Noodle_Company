@@ -30,7 +30,10 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
+     <string notr="true">background-color: transparent;
+font: 9pt &quot;휴먼둥근헤드라인&quot;;
+
+border: none;
 </string>
     </property>
     <property name="text">
@@ -53,10 +56,12 @@
      <string notr="true">QPushButton{
 	background-color: rgb(255, 247, 237);
 	gridline-color: rgb(170, 85, 255);
-	border-radius: 15Px;
+	border-radius: 25Px;
+	border: 2px solid rgb(170, 85, 255);
 }
 QPushButton:hover{
-	background-color: rgb(50, 110, 255);
+	
+	background-color: rgb(255, 187, 255);
 	color: rgb(255, 255, 255);
 }
 QPushButton:pressed{
@@ -83,8 +88,20 @@ QPushButton:pressed{
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 247, 237);
-border-radius: 15Px;</string>
+     <string notr="true">QPushButton{
+	background-color: rgb(255, 247, 237);
+	gridline-color: rgb(170, 85, 255);
+	border-radius: 25Px;
+	border: 2px solid rgb(170, 85, 255);
+}
+QPushButton:hover{
+	
+	background-color: rgb(255, 187, 255);
+	color: rgb(255, 255, 255);
+}
+QPushButton:pressed{
+	background-color: rgb(100, 170, 255);
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -100,7 +117,9 @@ border-radius: 15Px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 247, 233);</string>
+     <string notr="true">background-color: transparent;
+
+border: none;</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600; font-style:italic; color:#aa55ff;&quot;&gt;투자 성향 선택&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -116,7 +135,9 @@ border-radius: 15Px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 247, 237);</string>
+     <string notr="true">background-color: transparent;
+
+border: none;</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600; font-style:italic; color:#aa55ff;&quot;&gt;성향에 따른 기업 추천&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -132,8 +153,20 @@ border-radius: 15Px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 247, 237);
-border-radius: 15Px;</string>
+     <string notr="true">QPushButton{
+	background-color: rgb(255, 247, 237);
+	gridline-color: rgb(170, 85, 255);
+	border-radius: 25Px;
+	border: 2px solid rgb(170, 85, 255);
+}
+QPushButton:hover{
+	
+	background-color: rgb(255, 187, 255);
+	color: rgb(255, 255, 255);
+}
+QPushButton:pressed{
+	background-color: rgb(100, 170, 255);
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -149,7 +182,9 @@ border-radius: 15Px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 247, 237);</string>
+     <string notr="true">background-color: transparent;
+
+border: none;</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600; font-style:italic; color:#aa55ff;&quot;&gt;시장 평가&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -165,8 +200,20 @@ border-radius: 15Px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 247, 237);
-border-radius: 15Px;</string>
+     <string notr="true">QPushButton{
+	background-color: rgb(255, 247, 237);
+	gridline-color: rgb(170, 85, 255);
+	border-radius: 25Px;
+	border: 2px solid rgb(170, 85, 255);
+}
+QPushButton:hover{
+	
+	background-color: rgb(255, 187, 255);
+	color: rgb(255, 255, 255);
+}
+QPushButton:pressed{
+	background-color: rgb(100, 170, 255);
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -182,12 +229,23 @@ border-radius: 15Px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 247, 237);</string>
+     <string notr="true">background-color: transparent;
+
+border: none;</string>
     </property>
     <property name="text">
      <string>TextLabel</string>
     </property>
    </widget>
+   <zorder>pushButton</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label</zorder>
+   <zorder>pushButton_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>pushButton_4</zorder>
+   <zorder>label_5</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
