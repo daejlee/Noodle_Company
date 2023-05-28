@@ -4,6 +4,9 @@ import requests
 
 NOT_EXISTING = -1
 
+#코스피200 기업명
+KOSPI_200 = []
+
 def get_KOSPI():
 	#네이버 금융에서 코스피 지수를 크롤링해옵니다.
 	url = "https://finance.naver.com/sise/sise_index.nhn?code=KOSPI"
@@ -37,6 +40,7 @@ def get_market_cap(company_name):
 #크롤링에 시간이 오래 걸려서 한 번에 코스피 코스닥 시가총액을 모두 불러와서 저장해두고 사용하고자 만든 함수입니다. 반환값은 1차원 딕셔너리 입니다.
 def get_market_cap_dict():
 	cap_dict = {}
+	k = 0
 	for i in range(41):
 		address = 'https://finance.naver.com/sise/sise_market_sum.naver?sosok=0&page=' + str(i + 1)
 		res = requests.get(address)
@@ -48,6 +52,9 @@ def get_market_cap_dict():
 			basic_info = item.get_text()
 			sinfo = basic_info.split("\n")
 			cap_dict[sinfo[2]] = nums[4].get_text()
+			if k < 200:
+				KOSPI_200.append(sinfo[2])
+				k += 1
 	for i in range(33):
 		address = 'https://finance.naver.com/sise/sise_market_sum.naver?sosok=1&page=' + str(i + 1)
 		res = requests.get(address)
