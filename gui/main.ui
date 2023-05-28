@@ -65,7 +65,8 @@ QPushButton:hover{
 	color: rgb(255, 255, 255);
 }
 QPushButton:pressed{
-	background-color: rgb(100, 170, 255);
+	background-color: rgb(170, 170, 255);
+
 }</string>
     </property>
     <property name="text">
@@ -100,7 +101,7 @@ QPushButton:hover{
 	color: rgb(255, 255, 255);
 }
 QPushButton:pressed{
-	background-color: rgb(100, 170, 255);
+	background-color: rgb(170, 170, 255);
 }</string>
     </property>
     <property name="text">
@@ -165,7 +166,7 @@ QPushButton:hover{
 	color: rgb(255, 255, 255);
 }
 QPushButton:pressed{
-	background-color: rgb(100, 170, 255);
+	background-color: rgb(170, 170, 255);
 }</string>
     </property>
     <property name="text">
@@ -212,7 +213,7 @@ QPushButton:hover{
 	color: rgb(255, 255, 255);
 }
 QPushButton:pressed{
-	background-color: rgb(100, 170, 255);
+	background-color: rgb(170, 170, 255);
 }</string>
     </property>
     <property name="text">
