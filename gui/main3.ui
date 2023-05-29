@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(247, 234, 255);</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>755</width>
+         <height>1972</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QWidget" name="widget_2" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>1950</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(234, 208, 255);</string>
+          </property>
+          <widget class="QLabel" name="label_2">
+           <property name="geometry">
+            <rect>
+             <x>240</x>
+             <y>20</y>
+             <width>261</width>
+             <height>71</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: transparent;
+font: 9pt &quot;휴먼둥근헤드라인&quot;;
+
+border: none;</string>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; color:#aa55ff;&quot;&gt;투자 성향 테스트&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+          <widget class="QWidget" name="widget_3" native="true">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>90</y>
+             <width>711</width>
+             <height>241</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(170, 170, 255);
+border-radius: 25Px;</string>
+           </property>
+           <widget class="QLabel" name="label_3">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>371</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;1. 당신의 연령대는 어떻게 됩니까?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>40</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>19세 이하</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_2">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>80</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>20세 ~ 40세</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_3">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>120</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>41세 ~50세</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_4">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>160</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>51세 ~60세</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_5">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>200</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>61세 이상</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="widget_4" native="true">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>350</y>
+             <width>711</width>
+             <height>251</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(170, 170, 255);
+border-radius: 25Px;</string>
+           </property>
+           <widget class="QLabel" name="label_5">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>591</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;2. 투자하고자 하는 자금의 투자 가능 기간은 얼마나 됩니까?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_11">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>40</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>6개월 이내</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_12">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>80</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>6개월 이상~1년이내</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_13">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>120</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>1년 이상~2년 이내</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_14">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>160</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>2년 이상~3년 이내</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_15">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>200</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>3년 이상</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="widget_5" native="true">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>620</y>
+             <width>711</width>
+             <height>301</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(170, 170, 255);
+border-radius: 25Px;</string>
+           </property>
+           <widget class="QLabel" name="label_7">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>651</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;3. 다음 중 투자경험과 가장 가까운 것은 어느 것입니까?(중복 가능)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_21">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>40</y>
+              <width>411</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>은행의 예금, 적금, 국채, 지방채, 보증채, MMF, CMA 등</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_22">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>80</y>
+              <width>481</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>금융채, 신용도가 높은 회사채, 채권형펀드, 원금보존추구형ELS 등</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_23">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>120</y>
+              <width>521</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>신용도 중간 등급의 회사채, 원금의 일부만 보장되는 ELS, 혼합형펀드 등</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_24">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>160</y>
+              <width>641</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>신용도가 낮은 회사채, 주식, 원금의 보장되지 않는 ELS, 시장수익률 수준의 수익을 </string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_25">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>230</y>
+              <width>651</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>ELW, 선물옵션, 시장수익률 이상의 수익을 추구하는 주식형펀드, 파생상품에 투자하는 </string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_8">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>200</y>
+              <width>201</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>추구하는 주식형펀드 등</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_9">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>270</y>
+              <width>161</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>펀드, 주식 신용거래 등</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="widget_6" native="true">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>940</y>
+             <width>711</width>
+             <height>211</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(170, 170, 255);
+border-radius: 25Px;</string>
+           </property>
+           <widget class="QLabel" name="label_10">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>671</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;4. &lt;/span&gt;&lt;span style=&quot; font-family:'나눔고딕','NanumGothic','맑은 고딕','malgun gothic','돋움','Dotum','Apple SD Gothic Neo','Helvetica','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;금융상품 투자에 대한 본인의 지식수준은 어느 정도라고 생각하십니까?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_26">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>40</y>
+              <width>491</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>［매우 낮은 수준］투자의사 결정을 스스로 내려본 경험이 없는 정도</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_27">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>80</y>
+              <width>411</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>［낮은 수준］주식과 채권의 차이를 구별할 수 있는 정도</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_28">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>120</y>
+              <width>551</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>［높은 수준］투자할 수 있는 대부분의 금융상품의 차이를 구별할수 있는 정도</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_29">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>160</y>
+              <width>641</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>［매우 높은 수준］금융상품을 비롯하여 모든 투자대상 상품의 차이를 이해할 수 있는 정도</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="widget_7" native="true">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>1170</y>
+             <width>711</width>
+             <height>291</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(170, 170, 255);
+border-radius: 25Px;</string>
+           </property>
+           <widget class="QLabel" name="label_11">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>691</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;5. &lt;/span&gt;&lt;span style=&quot; font-family:'나눔고딕','NanumGothic','맑은 고딕','malgun gothic','돋움','Dotum','Apple SD Gothic Neo','Helvetica','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;현재 투자하고자 하는 자금은 전체 금융자산(부동산 등을 제외) 중 어느 정도의&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_30">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>80</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>10% 이내</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_31">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>120</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>10% 이상~20% 이내</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_32">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>160</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>20% 이상~30% 이내</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_33">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>200</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>30% 이상~40% 이내</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_34">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>240</y>
+              <width>251</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>40%</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_12">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>40</y>
+              <width>211</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;비중을 차지합니까?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="widget_8" native="true">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>1480</y>
+             <width>711</width>
+             <height>161</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(170, 170, 255);
+border-radius: 25Px;</string>
+           </property>
+           <widget class="QLabel" name="label_13">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>651</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'나눔고딕','NanumGothic','맑은 고딕','malgun gothic','돋움','Dotum','Apple SD Gothic Neo','Helvetica','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;6. 다음 중 당신의 수입원을 가장 잘 나타내고 있는 것은 어느 것입니까?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_35">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>40</y>
+              <width>661</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>현재 일정한 수입이 발생하고 있으며, 향후 현재 수준을 유지하거나 증가할 것으로 예상된다.</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_36">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>80</y>
+              <width>581</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>현재 일정한 수입이 발생하고 있으나, 향후 감소하거나 불안정할 것으로 예상된다.</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_37">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>120</y>
+              <width>361</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>현재 일정한 수입이 없으며, 연금이 주수입원이다.</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="widget_9" native="true">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>1660</y>
+             <width>711</width>
+             <height>251</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(170, 170, 255);
+border-radius: 25Px;</string>
+           </property>
+           <widget class="QLabel" name="label_14">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>10</y>
+              <width>631</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'나눔고딕','NanumGothic','맑은 고딕','malgun gothic','돋움','Dotum','Apple SD Gothic Neo','Helvetica','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;7. 만약 투자원금에 손실이 발생할 경우 다음 중 감수할 수 있는 손실 &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_38">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>80</y>
+              <width>341</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>무슨 일이 있어도 투자원금은 보전되어야 한다.</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_39">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>120</y>
+              <width>351</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>10% 미만까지는 손실을 감수할 수 있을 것 같다.</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_40">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>160</y>
+              <width>351</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>20% 미만까지는 손실을 감수할 수 있을 것 같다.</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_41">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>200</y>
+              <width>381</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>기대수익이 높다면 위험이 높아도 상관하지 않겠다.</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_15">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>40</y>
+              <width>241</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;수준은 어느 것입니까?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
