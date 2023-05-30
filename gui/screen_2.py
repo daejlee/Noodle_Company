@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 
-form_class = uic.loadUiType("C:/Users/user/Desktop/Noodle_Company/gui/main2.ui")[0]
+form_class = uic.loadUiType("C:/Users/savif/workspace/Noodle_Company/gui/main2.ui")[0]
 class MyWindow(QMainWindow, form_class):
     def __init__(self):
         super().__init__()
