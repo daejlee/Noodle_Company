@@ -1,15 +1,16 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
+from PyQt5.QtWidgets import QMainWindow, QLabel
 from PyQt5 import uic
 
 form_class_screen2 = uic.loadUiType("C:/Users/user/Desktop/Noodle_Company/gui/invest_bias_test.ui")[0]
 
 
-class MyWindow(QMainWindow, form_class_screen2):
+class Screen2(QMainWindow, form_class_screen2):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-
+        self.pushButton.clicked.connect(self.switch_to_screen1)
+        self.pushButton_2.clicked.connect(self.switch_to_screen3)
+        
         self.button_scores = {
             self.radioButton_1: 12.5,   # QRadioButton 객체와 점수를 매핑하는 딕셔너리를 생성합니다.
             self.radioButton_2: 12.5,
@@ -89,10 +90,18 @@ class MyWindow(QMainWindow, form_class_screen2):
             if button.isChecked():
                 total_score += score
         self.total_score_label.setText(f"Total Score: {total_score}")
+        return total_score
+
+    def switch_to_screen1(self):
+        self.hide()
+        from main_service import Screen1
+        Screen1.show
+
+    def switch_to_screen3(self):
+        self.hide()
+        from test_result import Screen3
+        Screen3.show
+        
 
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    myWindow = MyWindow()
-    myWindow.show()
-    sys.exit(app.exec_())
+        
