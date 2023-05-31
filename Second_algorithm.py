@@ -27,15 +27,16 @@ def secarg_point(ncav, cap, debtr, per, a=1.5, b=0.5, c=10, d=300000000000):
                     return corp				
     return
 
+OUTLAW_LIST = []
+
 def sec_arg(a=1.5, b=0.5, c=10, d=300000000000):
 	secarg_corp = {}
-	OUTLAW_LIST = []
 	for key in MERGED_REPORT:
 		company = key
 		
 		CAP = get_market_cap(company)
 		
-		if CAP == NOT_EXISTING:		#시가총액이 네이버 증권에 존재하지 않는 기업은 패스
+		if CAP == NOT_EXISTING:
 			continue
 		CAP = float(CAP.replace(',', '')) * 100000000
 	
@@ -45,10 +46,9 @@ def sec_arg(a=1.5, b=0.5, c=10, d=300000000000):
 			per = CAP / NET_INCOME
 			debtr = get_dangi(company, "부채총계") / get_dangi(company, "자본총계")
 		except:
-			OUTLAW_LIST.append(company)		#오류가 발생하는 기업들은 따로
+			OUTLAW_LIST.append(company)
 			continue
 
-		corp = []
 		corp = secarg_point(ncav, CAP, debtr, per, a, b, c, d)
 		if corp != None: secarg_corp[company] = corp
 	return secarg_corp
