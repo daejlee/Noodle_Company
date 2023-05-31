@@ -17,14 +17,46 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>100</y>
-      <width>93</width>
-      <height>28</height>
+      <x>10</x>
+      <y>20</y>
+      <width>321</width>
+      <height>121</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: rgb(255, 247, 237);
+	gridline-color: rgb(170, 85, 255);
+	border-radius: 25Px;
+	border: 2px solid rgb(170, 85, 255);
+}
+QPushButton:hover{
+	
+	background-color: rgb(255, 187, 255);
+	color: rgb(255, 255, 255);
+}
+QPushButton:pressed{
+	background-color: rgb(170, 170, 255);
+}</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>당신의 투자 유형을 확인하고 싶으면 클릭</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_investment_type">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>250</y>
+      <width>181</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(170, 170, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
