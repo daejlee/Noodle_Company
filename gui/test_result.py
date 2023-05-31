@@ -1,6 +1,5 @@
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import uic
-from invest_bias_test import MyWindow
 
 form_class_screen3 = uic.loadUiType("C:/Users/user/Desktop/Noodle_Company/gui/test_result.ui")[0]
 
