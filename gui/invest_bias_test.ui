@@ -29,7 +29,7 @@
          <x>0</x>
          <y>0</y>
          <width>755</width>
-         <height>1972</height>
+         <height>2122</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -38,7 +38,7 @@
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>1950</height>
+            <height>2100</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -89,7 +89,7 @@ border-radius: 25Px;</string>
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;1. 당신의 연령대는 어떻게 됩니까?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton">
+           <widget class="QRadioButton" name="radioButton_1">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -181,7 +181,7 @@ border-radius: 25Px;</string>
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;2. 투자하고자 하는 자금의 투자 가능 기간은 얼마나 됩니까?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_11">
+           <widget class="QRadioButton" name="radioButton_6">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -194,7 +194,7 @@ border-radius: 25Px;</string>
              <string>6개월 이내</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_12">
+           <widget class="QRadioButton" name="radioButton_7">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -207,7 +207,7 @@ border-radius: 25Px;</string>
              <string>6개월 이상~1년이내</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_13">
+           <widget class="QRadioButton" name="radioButton_8">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -220,7 +220,7 @@ border-radius: 25Px;</string>
              <string>1년 이상~2년 이내</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_14">
+           <widget class="QRadioButton" name="radioButton_9">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -233,7 +233,7 @@ border-radius: 25Px;</string>
              <string>2년 이상~3년 이내</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_15">
+           <widget class="QRadioButton" name="radioButton_10">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -273,7 +273,7 @@ border-radius: 25Px;</string>
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;3. 다음 중 투자경험과 가장 가까운 것은 어느 것입니까?(중복 가능)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_21">
+           <widget class="QRadioButton" name="radioButton_11">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -286,7 +286,7 @@ border-radius: 25Px;</string>
              <string>은행의 예금, 적금, 국채, 지방채, 보증채, MMF, CMA 등</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_22">
+           <widget class="QRadioButton" name="radioButton_12">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -299,7 +299,7 @@ border-radius: 25Px;</string>
              <string>금융채, 신용도가 높은 회사채, 채권형펀드, 원금보존추구형ELS 등</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_23">
+           <widget class="QRadioButton" name="radioButton_13">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -312,7 +312,7 @@ border-radius: 25Px;</string>
              <string>신용도 중간 등급의 회사채, 원금의 일부만 보장되는 ELS, 혼합형펀드 등</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_24">
+           <widget class="QRadioButton" name="radioButton_14">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -325,7 +325,7 @@ border-radius: 25Px;</string>
              <string>신용도가 낮은 회사채, 주식, 원금의 보장되지 않는 ELS, 시장수익률 수준의 수익을 </string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_25">
+           <widget class="QRadioButton" name="radioButton_15">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -391,7 +391,7 @@ border-radius: 25Px;</string>
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;4. &lt;/span&gt;&lt;span style=&quot; font-family:'나눔고딕','NanumGothic','맑은 고딕','malgun gothic','돋움','Dotum','Apple SD Gothic Neo','Helvetica','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;금융상품 투자에 대한 본인의 지식수준은 어느 정도라고 생각하십니까?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_26">
+           <widget class="QRadioButton" name="radioButton_16">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -404,7 +404,7 @@ border-radius: 25Px;</string>
              <string>［매우 낮은 수준］투자의사 결정을 스스로 내려본 경험이 없는 정도</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_27">
+           <widget class="QRadioButton" name="radioButton_17">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -417,7 +417,7 @@ border-radius: 25Px;</string>
              <string>［낮은 수준］주식과 채권의 차이를 구별할 수 있는 정도</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_28">
+           <widget class="QRadioButton" name="radioButton_18">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -430,7 +430,7 @@ border-radius: 25Px;</string>
              <string>［높은 수준］투자할 수 있는 대부분의 금융상품의 차이를 구별할수 있는 정도</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_29">
+           <widget class="QRadioButton" name="radioButton_19">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -470,7 +470,7 @@ border-radius: 25Px;</string>
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;5. &lt;/span&gt;&lt;span style=&quot; font-family:'나눔고딕','NanumGothic','맑은 고딕','malgun gothic','돋움','Dotum','Apple SD Gothic Neo','Helvetica','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;현재 투자하고자 하는 자금은 전체 금융자산(부동산 등을 제외) 중 어느 정도의&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_30">
+           <widget class="QRadioButton" name="radioButton_20">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -483,7 +483,7 @@ border-radius: 25Px;</string>
              <string>10% 이내</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_31">
+           <widget class="QRadioButton" name="radioButton_21">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -496,7 +496,7 @@ border-radius: 25Px;</string>
              <string>10% 이상~20% 이내</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_32">
+           <widget class="QRadioButton" name="radioButton_22">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -509,7 +509,7 @@ border-radius: 25Px;</string>
              <string>20% 이상~30% 이내</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_33">
+           <widget class="QRadioButton" name="radioButton_23">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -522,7 +522,7 @@ border-radius: 25Px;</string>
              <string>30% 이상~40% 이내</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_34">
+           <widget class="QRadioButton" name="radioButton_24">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -575,7 +575,7 @@ border-radius: 25Px;</string>
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'나눔고딕','NanumGothic','맑은 고딕','malgun gothic','돋움','Dotum','Apple SD Gothic Neo','Helvetica','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;6. 다음 중 당신의 수입원을 가장 잘 나타내고 있는 것은 어느 것입니까?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_35">
+           <widget class="QRadioButton" name="radioButton_25">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -588,7 +588,7 @@ border-radius: 25Px;</string>
              <string>현재 일정한 수입이 발생하고 있으며, 향후 현재 수준을 유지하거나 증가할 것으로 예상된다.</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_36">
+           <widget class="QRadioButton" name="radioButton_26">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -601,7 +601,7 @@ border-radius: 25Px;</string>
              <string>현재 일정한 수입이 발생하고 있으나, 향후 감소하거나 불안정할 것으로 예상된다.</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_37">
+           <widget class="QRadioButton" name="radioButton_27">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -641,7 +641,7 @@ border-radius: 25Px;</string>
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-family:'나눔고딕','NanumGothic','맑은 고딕','malgun gothic','돋움','Dotum','Apple SD Gothic Neo','Helvetica','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;7. 만약 투자원금에 손실이 발생할 경우 다음 중 감수할 수 있는 손실 &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_38">
+           <widget class="QRadioButton" name="radioButton_28">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -654,7 +654,7 @@ border-radius: 25Px;</string>
              <string>무슨 일이 있어도 투자원금은 보전되어야 한다.</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_39">
+           <widget class="QRadioButton" name="radioButton_29">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -667,7 +667,7 @@ border-radius: 25Px;</string>
              <string>10% 미만까지는 손실을 감수할 수 있을 것 같다.</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_40">
+           <widget class="QRadioButton" name="radioButton_30">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -680,7 +680,7 @@ border-radius: 25Px;</string>
              <string>20% 미만까지는 손실을 감수할 수 있을 것 같다.</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_41">
+           <widget class="QRadioButton" name="radioButton_31">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -706,6 +706,66 @@ border-radius: 25Px;</string>
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;수준은 어느 것입니까?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
+          </widget>
+          <widget class="QPushButton" name="pushButton">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>1990</y>
+             <width>121</width>
+             <height>81</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	background-color: rgb(255, 247, 237);
+	gridline-color: rgb(170, 85, 255);
+	border-radius: 25Px;
+	border: 2px solid rgb(170, 85, 255);
+}
+QPushButton:hover{
+	
+	background-color: rgb(255, 187, 255);
+	color: rgb(255, 255, 255);
+}
+QPushButton:pressed{
+	background-color: rgb(170, 170, 255);
+
+}</string>
+           </property>
+           <property name="text">
+            <string>뒤로 가기</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="geometry">
+            <rect>
+             <x>520</x>
+             <y>1990</y>
+             <width>121</width>
+             <height>81</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	background-color: rgb(255, 247, 237);
+	gridline-color: rgb(170, 85, 255);
+	border-radius: 25Px;
+	border: 2px solid rgb(170, 85, 255);
+}
+QPushButton:hover{
+	
+	background-color: rgb(255, 187, 255);
+	color: rgb(255, 255, 255);
+}
+QPushButton:pressed{
+	background-color: rgb(170, 170, 255);
+
+}</string>
+           </property>
+           <property name="text">
+            <string>설문 완료</string>
+           </property>
           </widget>
          </widget>
         </item>
