@@ -1,11 +1,11 @@
 from PyQt5.QtWidgets import QMainWindow, QLabel
 from PyQt5 import uic
 
-form_class_screen2 = uic.loadUiType("C:/Users/user/Desktop/Noodle_Company/gui/invest_bias_test.ui")[0]
-form_class_screen3 = uic.loadUiType("C:/Users/user/Desktop/Noodle_Company/gui/test_result.ui")[0]
+form_invest_bias_test_screen = uic.loadUiType("C:/Users/user/Desktop/Noodle_Company/gui/invest_bias_test.ui")[0]
+form_test_result_screen = uic.loadUiType("C:/Users/user/Desktop/Noodle_Company/gui/test_result.ui")[0]
 
 TOTAL_SCORE = 0
-class Screen3(QMainWindow, form_class_screen3):
+class test_result_Screen(QMainWindow, form_test_result_screen):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -33,12 +33,12 @@ class Screen3(QMainWindow, form_class_screen3):
         # 레이블에 투자 유형을 표시합니다.
         self.label_investment_type.setText(f"투자 유형: {bias_type}, {total_score}")
 
-class Screen2(QMainWindow, form_class_screen2):
+class invest_bias_test_Screen(QMainWindow, form_invest_bias_test_screen):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.pushButton.clicked.connect(self.switch_to_screen1)
-        self.pushButton_2.clicked.connect(self.switch_to_screen3)
+        self.pushButton.clicked.connect(self.switch_main_service_screen)
+        self.pushButton_2.clicked.connect(self.switch_test_result_screen)
         
         self.button_scores = {
             self.radioButton_1: 12.5,   # QRadioButton 객체와 점수를 매핑하는 딕셔너리를 생성합니다.
@@ -121,16 +121,16 @@ class Screen2(QMainWindow, form_class_screen2):
         self.total_score_label.setText(f"Total Score: {total_score}")
         return total_score
 
-    def switch_to_screen1(self):
+    def switch_main_service_screen(self):
         self.hide()
-        from main_service import Screen1
-        Screen1.show
+        from main_service import main_service_Screen
+        main_service_Screen.show
 
-    def switch_to_screen3(self):
+    def switch_test_result_screen(self):
         self.hide()
         print(TOTAL_SCORE)
         # from test_result import Screen3
-        Screen3.show
+        test_result_Screen.show
         
 
 
