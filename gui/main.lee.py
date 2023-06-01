@@ -1,8 +1,8 @@
 import sys
 from PyQt5.QtWidgets import QApplication
 from main_service import Screen1
-from invest_bias_test import Screen2
-from test_result import Screen3
+from invest_bias_test import *
+# from test_result import Screen3
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

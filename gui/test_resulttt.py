@@ -29,4 +29,4 @@ class Screen3(QMainWindow, form_class_screen3):
             bias_type = "공격투자형"
         
         # 레이블에 투자 유형을 표시합니다.
-        self.label_investment_type.setText(f"투자 유형: {bias_type}")
+        self.label_investment_type.setText(f"투자 유형: {bias_type}, {total_score}")
