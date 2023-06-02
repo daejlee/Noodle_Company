@@ -12,9 +12,6 @@ class main_service_Screen(QMainWindow, form_main_service_screen):
 
     def switch_invest_bias_test_screen(self):
         self.hide()
-        invest_bias_test_Screen.show
-    
-    
     #line editor: 사용자가 직접입력
     #label: 글자 입력 가능(... 클릭하면 글자의 색이나 여러가지 바꾸기 가능)
 

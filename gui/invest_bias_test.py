@@ -3,40 +3,11 @@ from PyQt5 import uic
 from shared_data import *
 
 form_invest_bias_test_screen = uic.loadUiType("C:/Users/savif/workspace/Noodle_Company/gui/ui/invest_bias_test.ui")[0]
-form_test_result_screen = uic.loadUiType("C:/Users/savif/workspace/Noodle_Company/gui/ui/test_result.ui")[0]
-
-class test_result_Screen(QMainWindow, form_test_result_screen):
-    def __init__(self, total_score):
-        super().__init__()
-        self.setupUi(self)
-         # 버튼을 투자 유형 계산 메서드에 연결합니다.
-        self.pushButton.clicked.connect(self.calculate_investment_bias_type)
-        self.total_score = total_score
-
-        
-    def calculate_investment_bias_type(self):
-        total_score = self.total_score
-        if total_score <= 20:
-            bias_type = "안정형"
-        elif total_score <= 40:
-            bias_type = "안정추구형"
-        elif total_score <= 60:
-            bias_type = "위험중립형"
-        elif total_score <= 80:
-            bias_type = "적극투자형"
-        else:
-            bias_type = "공격투자형"
-        
-        # 레이블에 투자 유형을 표시합니다.
-        self.label_investment_type.setText(f"투자 유형: {bias_type}, {total_score}")
 
 class invest_bias_test_Screen(QMainWindow, form_invest_bias_test_screen):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.pushButton.clicked.connect(self.switch_main_service_screen)
-        self.pushButton_2.clicked.connect(self.switch_test_result_screen)
-        
         self.button_scores = {
             self.radioButton_1: 12.5,   # QRadioButton 객체와 점수를 매핑하는 딕셔너리를 생성합니다.
             self.radioButton_2: 12.5,
@@ -69,10 +40,7 @@ class invest_bias_test_Screen(QMainWindow, form_invest_bias_test_screen):
             self.radioButton_29: 6.2,
             self.radioButton_30: 12.5,
             self.radioButton_31: 18.7,
-           
-            
         }
-
         self.radioButton_1.clicked.connect(self.calculate_total_score)
         self.radioButton_1.clicked.connect(self.calculate_total_score)
         self.radioButton_2.clicked.connect(self.calculate_total_score)
@@ -105,26 +73,15 @@ class invest_bias_test_Screen(QMainWindow, form_invest_bias_test_screen):
         self.radioButton_29.clicked.connect(self.calculate_total_score)
         self.radioButton_30.clicked.connect(self.calculate_total_score)
         self.radioButton_31.clicked.connect(self.calculate_total_score)
-
         self.total_score_label = QLabel("Total Score: 0")
         self.verticalLayout.addWidget(self.total_score_label)
 
     def calculate_total_score(self):
-        global TOTALSCORE
         total_score = 0
         for button, score in self.button_scores.items():
             if button.isChecked():
                 total_score += score
-                TOTALSCORE = total_score
+                f = open('C:/Users/savif/workspace/Noodle_Company/gui/ui/total_score.txt', 'w')
+                f.write(str(total_score))
+                f.close()
         self.total_score_label.setText(f"Total Score: {total_score}")
-
-    def switch_main_service_screen(self):
-        self.hide()
-        from service import main_service_Screen
-        main_service_Screen.show
-
-    def switch_test_result_screen(self):
-        self.hide()
-        print(TOTALSCORE)
-        res = test_result_Screen(TOTALSCORE)
-        res.show()
