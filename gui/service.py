@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import uic
 from invest_bias_test import invest_bias_test_Screen
-form_main_service_screen = uic.loadUiType("C:/Users/user/Desktop/Noodle_Company/gui/main_service.ui")[0]
+form_main_service_screen = uic.loadUiType("C:/Users/savif/workspace/Noodle_Company/gui/ui/main_service.ui")[0]
 
 
 class main_service_Screen(QMainWindow, form_main_service_screen):

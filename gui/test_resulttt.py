@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow, QLabel
 from PyQt5 import uic
 from invest_bias_test import Screen2
-form_class_screen3 = uic.loadUiType("C:/Users/user/Desktop/Noodle_Company/gui/test_result.ui")[0]
+form_class_screen3 = uic.loadUiType("C:/Users/user/Desktop/Noodle_Company/gui/ui/test_result.ui")[0]
 
 
 class Screen3(QMainWindow, form_class_screen3):

@@ -2,8 +2,8 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 
-form_class_IP = uic.loadUiType("C:/Users/savif/workspace/Noodle_Company/gui/invest_principle.ui")[0]
-form_class_detail = uic.loadUiType("C:/Users/savif/workspace/Noodle_Company/gui/invest_principles_detail.ui")[0]
+form_class_IP = uic.loadUiType("C:/Users/savif/workspace/Noodle_Company/gui/ui/invest_principle.ui")[0]
+form_class_detail = uic.loadUiType("C:/Users/savif/workspace/Noodle_Company/gui/ui/invest_principles_detail.ui")[0]
 class investPrinciple(QMainWindow, form_class_IP):
 	def __init__(self):
 		super().__init__()

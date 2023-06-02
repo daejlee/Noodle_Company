@@ -1,24 +1,21 @@
 from PyQt5.QtWidgets import QMainWindow, QLabel
 from PyQt5 import uic
+from shared_data import *
 
-form_invest_bias_test_screen = uic.loadUiType("C:/Users/user/Desktop/Noodle_Company/gui/invest_bias_test.ui")[0]
-form_test_result_screen = uic.loadUiType("C:/Users/user/Desktop/Noodle_Company/gui/test_result.ui")[0]
+form_invest_bias_test_screen = uic.loadUiType("C:/Users/savif/workspace/Noodle_Company/gui/ui/invest_bias_test.ui")[0]
+form_test_result_screen = uic.loadUiType("C:/Users/savif/workspace/Noodle_Company/gui/ui/test_result.ui")[0]
 
-TOTAL_SCORE = 0
 class test_result_Screen(QMainWindow, form_test_result_screen):
-    def __init__(self):
+    def __init__(self, total_score):
         super().__init__()
         self.setupUi(self)
          # 버튼을 투자 유형 계산 메서드에 연결합니다.
-        print(TOTAL_SCORE)
         self.pushButton.clicked.connect(self.calculate_investment_bias_type)
-        
+        self.total_score = total_score
+
         
     def calculate_investment_bias_type(self):
-        # screen2_instance = Screen2()  # Screen2 클래스의 인스턴스 생성
-        total_score = TOTAL_SCORE  # Screen2 인스턴스에서 총 점수를 가져옵니다.
-        
-        
+        total_score = self.total_score
         if total_score <= 20:
             bias_type = "안정형"
         elif total_score <= 40:
@@ -113,25 +110,21 @@ class invest_bias_test_Screen(QMainWindow, form_invest_bias_test_screen):
         self.verticalLayout.addWidget(self.total_score_label)
 
     def calculate_total_score(self):
+        global TOTALSCORE
         total_score = 0
         for button, score in self.button_scores.items():
             if button.isChecked():
                 total_score += score
-                TOTAL_SCORE = total_score
+                TOTALSCORE = total_score
         self.total_score_label.setText(f"Total Score: {total_score}")
-        return total_score
 
     def switch_main_service_screen(self):
         self.hide()
-        from main_service import main_service_Screen
+        from service import main_service_Screen
         main_service_Screen.show
 
     def switch_test_result_screen(self):
         self.hide()
-        print(TOTAL_SCORE)
-        # from test_result import Screen3
-        test_result_Screen.show
-        
-
-
-        
+        print(TOTALSCORE)
+        res = test_result_Screen(TOTALSCORE)
+        res.show()

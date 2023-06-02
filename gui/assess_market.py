@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import *
 from PyQt5 import uic
 from Buffett import *
 
-form_class_AM = uic.loadUiType("C:/Users/savif/workspace/Noodle_Company/gui/assess_market.ui")[0]
+form_class_AM = uic.loadUiType("C:/Users/savif/workspace/Noodle_Company/gui/ui/assess_market.ui")[0]
 
 class assessMarket(QMainWindow, form_class_AM):
 	def __init__(self):
