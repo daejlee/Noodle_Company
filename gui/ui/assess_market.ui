@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>785</width>
     <height>571</height>
    </rect>
   </property>
@@ -71,8 +71,8 @@ QScrollBar::sub-line:vertical:pressed {
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>755</width>
-         <height>1422</height>
+         <width>751</width>
+         <height>1418</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -93,59 +93,52 @@ QScrollBar::sub-line:vertical:pressed {
           <widget class="QLabel" name="label">
            <property name="geometry">
             <rect>
-             <x>30</x>
-             <y>80</y>
-             <width>411</width>
+             <x>50</x>
+             <y>220</y>
+             <width>521</width>
              <height>61</height>
             </rect>
            </property>
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#aa55ff;&quot;&gt;현재 주식 시장의 과열도 : &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; color:#aa55ff;&quot;&gt;현재 주식 시장의 과열도 : &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
           <widget class="QLabel" name="label_2">
            <property name="geometry">
             <rect>
-             <x>20</x>
-             <y>280</y>
-             <width>411</width>
+             <x>50</x>
+             <y>370</y>
+             <width>631</width>
              <height>61</height>
             </rect>
            </property>
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#aa55ff;&quot;&gt;권장되는 주식 / 채권 비율: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; color:#aa55ff;&quot;&gt;권장되는 주식 / 채권 비율: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QLabel" name="label_3">
            <property name="geometry">
             <rect>
-             <x>410</x>
-             <y>60</y>
-             <width>301</width>
-             <height>91</height>
+             <x>30</x>
+             <y>30</y>
+             <width>681</width>
+             <height>131</height>
             </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-	background-color: rgb(255, 247, 237);
-	gridline-color: rgb(170, 85, 255);
-	border-radius: 25Px;
-	border: 2px solid rgb(170, 85, 255);
-	font: 75 20pt &quot;Agency FB&quot;;
-}
-</string>
            </property>
            <property name="text">
             <string/>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
            </property>
           </widget>
           <widget class="QPushButton" name="pushButton_2">
            <property name="geometry">
             <rect>
-             <x>410</x>
-             <y>260</y>
-             <width>301</width>
-             <height>91</height>
+             <x>600</x>
+             <y>220</y>
+             <width>121</width>
+             <height>71</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -159,7 +152,7 @@ QScrollBar::sub-line:vertical:pressed {
 </string>
            </property>
            <property name="text">
-            <string/>
+            <string>BI에 대해</string>
            </property>
           </widget>
          </widget>
@@ -175,8 +168,8 @@ QScrollBar::sub-line:vertical:pressed {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>26</height>
+     <width>785</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>

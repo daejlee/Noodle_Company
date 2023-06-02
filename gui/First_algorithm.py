@@ -15,17 +15,20 @@ def firstarg1_point(cap, sales, per, tcap, lasset, lliability, income):
             if debtr >= 1.5:
                 if income / tcap >= 0.15:
                     cap /= 1000000000000
-                    y, z, w = 3, 2, 6
+                    x, y, z, w = 4, 3, 2, 6
+                    if cap > 100:
+                        cap = 100
                     if per < 1:
                         per = 1
                     if debtr > 10:
                         debtr = 10
                     if roe > 0.3:
                         roe = 0.3
+                    CAP = round(50/99.5 * cap + 50 - 25/99.5, 2)
                     PER = round(-25/6 * per + 100 + 25/6, 2)
                     DEBTR = round(50/8.5 * debtr + 50 - 150/17 ,2)
                     ROE = round(1000/3 * roe ,2)
-                    corp = [PER, DEBTR, ROE, round((y*PER+z*DEBTR+w*ROE)/(y+z+w), 2)]
+                    corp = [CAP, PER, DEBTR, ROE, round((x*cap+y*PER+z*DEBTR+w*ROE)/(x+y+z+w), 2)]
                     return corp
     return
 
@@ -34,22 +37,25 @@ def firstarg2_point(cap, sales, per, tcap, lasset, lliability, income):
     debtr = lasset / lliability
     roe = income / tcap
     if cap >= 300000000000 or sales >= 800000000000:
-        if per <= 13 or per * cap/tcap <= 20:
-            if debtr >= 1.5:
-                if income / tcap >= 0.2:
-                    cap /= 1000000000000
-                    y, z, w = 3, 2, 5
-                    if per < 1:
-                        per = 1
-                    if debtr > 10:
-                        debtr = 10
-                    if roe > 0.5:
-                        roe = 0.5
-                    PER = round(-25/6 * per + 100 + 25/6, 2)
-                    DEBTR = round(50/8.5 * debtr + 50 - 150/17 ,2)
-                    ROE = round(500/3 * roe + 50 - 100/3, 2)
-                    corp = [PER, DEBTR, ROE, round((y*PER+z*DEBTR+w*ROE)/(y+z+w), 2)]
-                    return corp
+            if per <= 13 or per * cap/tcap <= 20:
+                if debtr >= 1.5:
+                    if income / tcap >= 0.2:
+                        cap /= 1000000000000
+                        x, y, z, w = 4, 3, 2, 6
+                        if cap > 100:
+                            cap = 100
+                        if per < 1:
+                            per = 1
+                        if debtr > 10:
+                            debtr = 10
+                        if roe > 0.5:
+                            roe = 0.5
+                        CAP = round(50/99.7 * cap + 50 - 15/99.7,2)
+                        PER = round(-25/6 * per + 100 + 25/6, 2)
+                        DEBTR = round(50/8.5 * debtr + 50 - 150/17 ,2)
+                        ROE = round(500/3 * roe + 50 - 100/3, 2)
+                        corp = [CAP, PER, DEBTR, ROE, round((x*CAP+y*PER+z*DEBTR+w*ROE)/(x+y+z+w), 2)]
+                        return corp
     return
 
 OUTLAW_LIST = []
@@ -86,7 +92,7 @@ def first_arg(choice=1):
 			continue
 	return arg_corp
 
-print(first_arg(2))
+print(first_arg())
 print(OUTLAW_LIST)
 
 '''

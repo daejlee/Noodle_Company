@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QLabel
+from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import uic
 
 form_test_result_screen = uic.loadUiType("C:/Users/savif/workspace/Noodle_Company/gui/ui/test_result.ui")[0]
@@ -7,6 +7,7 @@ class test_result_Screen(QMainWindow, form_test_result_screen):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.pushButton_2.clicked.connect(self.hide)
         self.pushButton.clicked.connect(self.calculate_investment_bias_type)
 
     def calculate_investment_bias_type(self):

@@ -7,6 +7,8 @@ class invest_bias_test_Screen(QMainWindow, form_invest_bias_test_screen):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.pushButton.clicked.connect(self.hide)
+        self.pushButton_2.clicked.connect(self.hide)
         self.button_scores = {
             self.radioButton_1: 12.5,   # QRadioButton 객체와 점수를 매핑하는 딕셔너리를 생성합니다.
             self.radioButton_2: 12.5,
