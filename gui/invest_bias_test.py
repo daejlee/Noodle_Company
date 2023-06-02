@@ -1,6 +1,5 @@
 from PyQt5.QtWidgets import QMainWindow, QLabel
 from PyQt5 import uic
-from shared_data import *
 
 form_invest_bias_test_screen = uic.loadUiType("C:/Users/savif/workspace/Noodle_Company/gui/ui/invest_bias_test.ui")[0]
 

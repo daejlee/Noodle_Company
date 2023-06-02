@@ -93,14 +93,14 @@ QScrollBar::sub-line:vertical:pressed {
           <widget class="QLabel" name="label">
            <property name="geometry">
             <rect>
-             <x>240</x>
+             <x>170</x>
              <y>10</y>
-             <width>261</width>
+             <width>401</width>
              <height>61</height>
             </rect>
            </property>
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#aa55ff;&quot;&gt;투자원칙 디테일 1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#aa55ff;&quot;&gt;대원칙: 돈을 잃지 않는다&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
           <widget class="QPushButton" name="pushButton">
@@ -122,7 +122,7 @@ QScrollBar::sub-line:vertical:pressed {
 </string>
            </property>
            <property name="text">
-            <string>디테일 텍스트 들어갈 곳</string>
+            <string>가치 투자에서는 안전마진이 클수록 돈을 잃지 않을 확률이 커지고 동시에 수익률도 커진다.</string>
            </property>
           </widget>
          </widget>

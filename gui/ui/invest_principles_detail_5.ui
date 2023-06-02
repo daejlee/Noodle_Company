@@ -93,36 +93,23 @@ QScrollBar::sub-line:vertical:pressed {
           <widget class="QLabel" name="label">
            <property name="geometry">
             <rect>
-             <x>30</x>
-             <y>80</y>
-             <width>411</width>
+             <x>240</x>
+             <y>10</y>
+             <width>261</width>
              <height>61</height>
             </rect>
            </property>
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#aa55ff;&quot;&gt;현재 주식 시장의 과열도 : &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_2">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>280</y>
-             <width>411</width>
-             <height>61</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#aa55ff;&quot;&gt;권장되는 주식 / 채권 비율: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#aa55ff;&quot;&gt;안전성이 높은 투자&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
           <widget class="QPushButton" name="pushButton">
            <property name="geometry">
             <rect>
-             <x>410</x>
-             <y>60</y>
-             <width>301</width>
-             <height>91</height>
+             <x>20</x>
+             <y>80</y>
+             <width>681</width>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -131,35 +118,27 @@ QScrollBar::sub-line:vertical:pressed {
 	gridline-color: rgb(170, 85, 255);
 	border-radius: 25Px;
 	border: 2px solid rgb(170, 85, 255);
-	font: 75 20pt &quot;Agency FB&quot;;
 }
 </string>
            </property>
            <property name="text">
-            <string/>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="pushButton_2">
-           <property name="geometry">
-            <rect>
-             <x>410</x>
-             <y>260</y>
-             <width>301</width>
-             <height>91</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-	font: 75 20pt &quot;Agency FB&quot;;
-	background-color: rgb(255, 247, 237);
-	gridline-color: rgb(170, 85, 255);
-	border-radius: 25Px;
-	border: 2px solid rgb(170, 85, 255);
-}
-</string>
-           </property>
-           <property name="text">
-            <string/>
+            <string>아무리 확신이 생기는 투자처이더라도 확신을 가져서는 안 된다. 
+인간은 모든 것을 예측할 수 없다. 
+영원할 것 같은 거대 기업도 몰락하고 
+아무도 눈 여겨 보지도 않은 기업이 거대 기업으로 성장하기도 한다.
+ ‘성장주’란, 주당순이익 성장률이 과거에도 평균보다 훨씬 높았고 
+장래에도 계속 높을 것으로 예상되는 주식을 가리킨다. 
+주가가 지나치게 높지 않다면, 당연히 매력적이다. 
+문제는 가격이 지나치게 높다는 것이다. 
+성장주는 오래전부터 PER이 평균보다 훨씬 높다. 
+그러므로 성장주에는 투기 요소가 많아서 
+일반인이 단순하게 투자할 만한 대상이 절대 아니다. 
+이렇게 아무리 기대되는 산업에 기대되는 회사라 하더라도 
+그런 회사는 주가가 너무 높이 형성되기 때문에 
+예상치 못한 손실에 대비할 안전마진이 형성되지 않는다.
+ 따라서 대원칙 돈을 잃지 않는다는 것을 지키기 위해 
+동전 던지기는 피하는 것이 좋다. 
+또한, 이런 성장주가 아니더라도 돈을 벌 기회는 충분히 많다.</string>
            </property>
           </widget>
          </widget>

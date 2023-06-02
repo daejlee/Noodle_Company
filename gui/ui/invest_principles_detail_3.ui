@@ -93,36 +93,23 @@ QScrollBar::sub-line:vertical:pressed {
           <widget class="QLabel" name="label">
            <property name="geometry">
             <rect>
-             <x>30</x>
-             <y>80</y>
-             <width>411</width>
+             <x>240</x>
+             <y>10</y>
+             <width>261</width>
              <height>61</height>
             </rect>
            </property>
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#aa55ff;&quot;&gt;현재 주식 시장의 과열도 : &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_2">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>280</y>
-             <width>411</width>
-             <height>61</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#aa55ff;&quot;&gt;권장되는 주식 / 채권 비율: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#aa55ff;&quot;&gt;장기 투자&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
           <widget class="QPushButton" name="pushButton">
            <property name="geometry">
             <rect>
-             <x>410</x>
-             <y>60</y>
-             <width>301</width>
-             <height>91</height>
+             <x>20</x>
+             <y>80</y>
+             <width>681</width>
+             <height>381</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -131,35 +118,20 @@ QScrollBar::sub-line:vertical:pressed {
 	gridline-color: rgb(170, 85, 255);
 	border-radius: 25Px;
 	border: 2px solid rgb(170, 85, 255);
-	font: 75 20pt &quot;Agency FB&quot;;
 }
 </string>
            </property>
            <property name="text">
-            <string/>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="pushButton_2">
-           <property name="geometry">
-            <rect>
-             <x>410</x>
-             <y>260</y>
-             <width>301</width>
-             <height>91</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-	font: 75 20pt &quot;Agency FB&quot;;
-	background-color: rgb(255, 247, 237);
-	gridline-color: rgb(170, 85, 255);
-	border-radius: 25Px;
-	border: 2px solid rgb(170, 85, 255);
-}
-</string>
-           </property>
-           <property name="text">
-            <string/>
+            <string>시장은 단기적으로는 효율적이지 않을 수 있다.
+ 따라서 기업의 가치에 비해 주가가 낮게 형성된 기업들을 찾을 수 있다.
+ 장기적으로 보면 시장은 매우 효율적이다. 
+아무리 기업의 주가가 내재가치와 다르게 형성된다고 하더라도 
+몇 년이 흐르면 사람들이 그 기업의 가치를 정확히 알아차릴 수밖에 없다.
+ 지금은 당장 주가가 싸고 혹여 주가가 더 떨어진다고 하더라도 
+몇 년 뒤에는 주가가 제자리를 찾아가기 때문에 그 기간을 기다려야 한다. 
+또한, 저평가된 좋은 성과를 내는 기업을 찾았다면 
+그 기업은 앞으로도 주주에게 높은 이익을 주기 때문에 
+주가가 제자리를 찾았더라도 계속 그 기업과 함께하는 것이 좋다.</string>
            </property>
           </widget>
          </widget>

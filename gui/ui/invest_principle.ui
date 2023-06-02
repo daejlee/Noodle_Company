@@ -76,8 +76,7 @@ QScrollBar::sub-line:vertical:pressed {
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">
-</string>
+        <string notr="true"/>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
@@ -131,7 +130,7 @@ QPushButton:pressed{
 }</string>
            </property>
            <property name="text">
-            <string>PushButton</string>
+            <string>대원칙: 돈을 잃지 않는다</string>
            </property>
           </widget>
           <widget class="QPushButton" name="pushButton_2">
@@ -161,7 +160,7 @@ QPushButton:pressed{
 }</string>
            </property>
            <property name="text">
-            <string>PushButton</string>
+            <string>저평가된 기업에 투자</string>
            </property>
           </widget>
           <widget class="QPushButton" name="pushButton_3">
@@ -191,7 +190,7 @@ QPushButton:pressed{
 }</string>
            </property>
            <property name="text">
-            <string>PushButton</string>
+            <string>장기 투자</string>
            </property>
           </widget>
           <widget class="QPushButton" name="pushButton_4">
@@ -221,7 +220,7 @@ QPushButton:pressed{
 }</string>
            </property>
            <property name="text">
-            <string>PushButton</string>
+            <string>적절히 분산된 투자</string>
            </property>
           </widget>
           <widget class="QPushButton" name="pushButton_5">
@@ -251,127 +250,7 @@ QPushButton:pressed{
 }</string>
            </property>
            <property name="text">
-            <string>PushButton</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="pushButton_6">
-           <property name="geometry">
-            <rect>
-             <x>140</x>
-             <y>630</y>
-             <width>471</width>
-             <height>91</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-	background-color: rgb(255, 247, 237);
-	gridline-color: rgb(170, 85, 255);
-	border-radius: 25Px;
-	border: 2px solid rgb(170, 85, 255);
-}
-QPushButton:hover{
-	
-	background-color: rgb(255, 187, 255);
-	color: rgb(255, 255, 255);
-}
-QPushButton:pressed{
-	background-color: rgb(170, 170, 255);
-
-}</string>
-           </property>
-           <property name="text">
-            <string>PushButton</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="pushButton_7">
-           <property name="geometry">
-            <rect>
-             <x>140</x>
-             <y>740</y>
-             <width>471</width>
-             <height>91</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-	background-color: rgb(255, 247, 237);
-	gridline-color: rgb(170, 85, 255);
-	border-radius: 25Px;
-	border: 2px solid rgb(170, 85, 255);
-}
-QPushButton:hover{
-	
-	background-color: rgb(255, 187, 255);
-	color: rgb(255, 255, 255);
-}
-QPushButton:pressed{
-	background-color: rgb(170, 170, 255);
-
-}</string>
-           </property>
-           <property name="text">
-            <string>PushButton</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="pushButton_8">
-           <property name="geometry">
-            <rect>
-             <x>140</x>
-             <y>850</y>
-             <width>471</width>
-             <height>91</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-	background-color: rgb(255, 247, 237);
-	gridline-color: rgb(170, 85, 255);
-	border-radius: 25Px;
-	border: 2px solid rgb(170, 85, 255);
-}
-QPushButton:hover{
-	
-	background-color: rgb(255, 187, 255);
-	color: rgb(255, 255, 255);
-}
-QPushButton:pressed{
-	background-color: rgb(170, 170, 255);
-
-}</string>
-           </property>
-           <property name="text">
-            <string>PushButton</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="pushButton_9">
-           <property name="geometry">
-            <rect>
-             <x>140</x>
-             <y>960</y>
-             <width>471</width>
-             <height>91</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-	background-color: rgb(255, 247, 237);
-	gridline-color: rgb(170, 85, 255);
-	border-radius: 25Px;
-	border: 2px solid rgb(170, 85, 255);
-}
-QPushButton:hover{
-	
-	background-color: rgb(255, 187, 255);
-	color: rgb(255, 255, 255);
-}
-QPushButton:pressed{
-	background-color: rgb(170, 170, 255);
-
-}</string>
-           </property>
-           <property name="text">
-            <string>PushButton</string>
+            <string>안전성이 높은 투자</string>
            </property>
           </widget>
          </widget>

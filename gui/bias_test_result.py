@@ -7,7 +7,6 @@ class test_result_Screen(QMainWindow, form_test_result_screen):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-         # 버튼을 투자 유형 계산 메서드에 연결합니다.
         self.pushButton.clicked.connect(self.calculate_investment_bias_type)
 
     def calculate_investment_bias_type(self):
@@ -25,6 +24,4 @@ class test_result_Screen(QMainWindow, form_test_result_screen):
             bias_type = "적극투자형"
         else:
             bias_type = "공격투자형"
-        
-        # 레이블에 투자 유형을 표시합니다.
-        self.label_investment_type.setText(f"투자 유형: {bias_type}, {total_score}")
+        self.label_investment_type.setText(f"투자 유형: {bias_type}, {round(total_score)}")

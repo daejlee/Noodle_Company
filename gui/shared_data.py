@@ -1,1 +1,0 @@
-TOTALSCORE = 100
